@@ -3,10 +3,11 @@ const {app,BrowserWindow} = require('electron');
 var mainWindow;
 app.on('ready',function(){
   mainWindow = new BrowserWindow({
-    height:480,
-    width:640
+    height:540,
+    width:960
   });
 
+  //mainWindow.setMenu(null);
   mainWindow.loadURL('http://localhost:9000');
 
 });

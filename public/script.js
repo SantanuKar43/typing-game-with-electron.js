@@ -1,13 +1,19 @@
-var time = 41;
+var time = 10;
+var countdownInterval;
 
 $(document).ready(function(){
   countdownInterval = setInterval(countdown,1000);
 });
 
 function countdown(){
-  $('#timer').animate({'font-size':'40px','opacity':'0'},400);
   time-=1;
-  $('#timer').animate({'font-size':'60px','opacity':'1'},600);
+  $('#timer').animate({'font-size':'40px','opacity':'0'},500);
+  $('#timer').animate({'font-size':'60px','opacity':'1'},500);
+  if(time==0){
+    $('#timer').html('Time Up');
+    return clearInterval(countdownInterval);
+    console.log('end');
+  }
   $('#timer').html(time);
-  if(time==0) clearInterval(countdownInterval);
+
 }
